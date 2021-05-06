@@ -80,9 +80,9 @@ function playAgain() {
     gameOver = false;
     let symbol = " ";
 
-    spaces.forEach((space)=>{
+   /*  spaces.forEach((space)=>{
         space.innerHTML = `<div class='${symbol}'></div>`
-    });
+    }); */
 
     spaces.forEach((space) => space.addEventListener("click", handleClick));
 }
