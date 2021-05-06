@@ -70,8 +70,6 @@ function playAgain() {
 
     document.querySelector('.modal-overlay').classList.remove('active');
     document.querySelector('#win-run').classList.remove('run');
-    document.querySelectorAll('.space').classList.remove('o');
-    document.querySelectorAll('.space').classList.remove('x');
     whoo.stop();
     audioApplause.stop();
 
@@ -80,9 +78,9 @@ function playAgain() {
     gameOver = false;
     let symbol = " ";
 
-   /*  spaces.forEach((space)=>{
+    spaces.forEach((space)=>{
         space.innerHTML = `<div class='${symbol}'></div>`
-    }); */
+    });
 
     spaces.forEach((space) => space.addEventListener("click", handleClick));
 }
