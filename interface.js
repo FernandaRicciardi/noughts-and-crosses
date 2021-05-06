@@ -70,8 +70,8 @@ function playAgain() {
 
     document.querySelector('.modal-overlay').classList.remove('active');
     document.querySelector('#win-run').classList.remove('run');
-    whoo.stop();
-    audioApplause.stop();
+    /* whoo.stop();
+    audioApplause.stop(); */
 
     board = ["", "", "", "", "", "", "", "", ""];
     playerTurn = 0;
