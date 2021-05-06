@@ -67,12 +67,14 @@ function modalOn() {
 }
 
 function playAgain() {
-
+    
     document.querySelector('.modal-overlay').classList.remove('active');
     document.querySelector('#win-run').classList.remove('run');
-    /* whoo.stop();
-    audioApplause.stop(); */
-
+    document.querySelector('#win-who').classList.remove('xWin');
+    document.querySelector('#win-who').classList.remove('oWin');
+    document.querySelector('#win-who').classList.remove('hWin');
+    document.querySelector('#win-who').classList.remove('rWin');
+   
     board = ["", "", "", "", "", "", "", "", ""];
     playerTurn = 0;
     gameOver = false;
