@@ -70,6 +70,10 @@ function playAgain() {
 
     document.querySelector('.modal-overlay').classList.remove('active');
     document.querySelector('#win-run').classList.remove('run');
+    document.querySelectorAll('.space').classList.remove('o');
+    document.querySelectorAll('.space').classList.remove('x');
+    whoo.stop();
+    audioApplause.stop();
 
     board = ["", "", "", "", "", "", "", "", ""];
     playerTurn = 0;
