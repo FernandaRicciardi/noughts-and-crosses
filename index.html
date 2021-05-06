@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Noughts & Crosses</title>
+</head>
+<body>
+    <h1>Noughts and Crosses</h1>
+
+    <div id="container">
+        
+        <div id="settings"> <!-- game settings -->
+
+            <div class="opponent-selector"> <!-- Human or Robot -->
+
+                <h2 class="item1" >Select opponent</h2>
+
+                <div> <!-- Human -->
+                    <input id="sel-h" type="radio" name="selectOpponent" value="0">
+                    <label class="selection1 pickH" for="sel-h" data-title="You VS Yourself &#9733; Challenging!!!🤭"></label>
+                </div>
+              
+                <div> <!-- Robot -->
+                    <input id="sel-r" type="radio" name="selectOpponent" value="1">
+                    <label class="selection1 pickR" for="sel-r" data-title="It's quite obvious, isn't it?"></label>
+                </div>
+
+            </div>
+            
+            <div class="symbol-selector"> <!-- Nought or Cross -->
+
+                <h2 class="item1">Select symbol</h2>
+
+                <div> <!-- Nought -->
+                    <input id="sel-o" type="radio" name="selectSymbol" value="0" onclick="blueCrayon()">
+                    <label class="selection2 pickO" for="sel-o"></label>
+                </div>
+
+                <div> <!-- Cross -->
+                    <input id="sel-x" type="radio" name="selectSymbol" value="1" onclick="orangeCrayon()">
+                    <label class="selection2 pickX" for="sel-x"></label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="gameBoard" class="board"> <!-- board -->
+
+            <div> <!-- game board -->
+                <div>
+                    <div id="0" class="space"></div>
+                    <div id="1" class="space"></div>
+                    <div id="2" class="space"></div>
+                </div>
+    
+                <div>
+                    <div id="3" class="space"></div>
+                    <div id="4" class="space"></div>
+                    <div id="5" class="space"></div>
+                </div>
+    
+                <div>
+                    <div id="6" class="space"></div>
+                    <div id="7" class="space"></div>
+                    <div id="8" class="space"></div>
+                </div>
+            </div>
+
+            <div id="reset"> <!-- eraser reset button -->
+                <img id="eraser" src="assets/eraser.png" title="reset game" onclick="reloadGame()">
+            </div>
+    
+        </div>
+
+        <div class="modal-overlay"> <!-- modal winners -->
+            <div class="modal">
+
+                <img id="win-paper" src="assets/paper.png">
+
+                <div id="win-who"></div>
+
+                <img id="win-run" src="assets/run.png">
+
+                <img id="play" src="assets/play.png" title="play again" onclick="playAgain()">
+            
+            </div>
+        </div>
+
+    </div>
+
+    <footer id="credits">
+        Created by <a href="https://github.com/FernandaRicciardi" target="_blank" rel="noopener">Fernanda Ricciardi</a>
+    </footer>
+
+<script src="game.js"></script>
+<script src="interface.js"></script>
+    
+</body>
+</html>
