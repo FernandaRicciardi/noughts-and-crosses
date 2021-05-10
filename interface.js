@@ -85,6 +85,9 @@ function playAgain() {
     });
 
     spaces.forEach((space) => space.addEventListener("click", handleClick));
+
+    if (selectOpponent == "0" && selectSymbol == 0) blueCrayon();
+    if (selectOpponent == "0" && selectSymbol == 1) orangeCrayon();
 }
 
 function reloadGame() {
