@@ -21,8 +21,11 @@ let winStates = [
     [2, 4, 6],
 ];
 
-function playerMoviment(position, space) {
+let result;
 
+
+function playerMoviment(position, space) {
+    
     if (gameOver) return;
 
     selectOpponent = document.querySelector('input[name="selectOpponent"]:checked').value; // human = 0 / robot = 1
@@ -35,7 +38,7 @@ function playerMoviment(position, space) {
 
         board[position] = symbols[playerTurn];
         
-        gameOver = checkingWinner();
+        gameOver = checkingWinnerOrTie();
         
         if (gameOver == false) {
 
@@ -63,13 +66,15 @@ function robotMoviment() {
     board[robotPlay] = symbols[playerTurn];
     robotSpace.innerHTML = `<div class="${board[robotPlay]}"></div>`;
 
-    gameOver = checkingWinner();
+    gameOver = checkingWinnerOrTie();
     if (gameOver == false) playerTurn == 1 ? playerTurn = 2 : playerTurn = 1;
 
     return gameOver;
 }
 
-function checkingWinner() {
+function checkingWinnerOrTie() {
+
+    let hasEmpty = board.some((currentSpace) => currentSpace == "") // if there is at least 1 empty space: 'let hasEmpty = true' / if not: 'let hasEmpty = false'
    
     for (let i = 0; i < winStates.length; i++) {
 
@@ -82,9 +87,16 @@ function checkingWinner() {
         if (board[place0] == board[place1] && 
             board[place0] == board[place2] &&
             board[place0] != "") {
-               
-            return [true, board[place0]];
+
+            result = board[place0];
+            return [true, result];
         }
+
+    }
+
+    if (!hasEmpty) {
+        result = "tie";
+        return [true, result];
     }
 
     return false;

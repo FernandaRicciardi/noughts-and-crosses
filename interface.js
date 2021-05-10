@@ -5,11 +5,11 @@ function handleClick(event) {
     let space = event.target;
     let position = space.id;
     
-    if (playerMoviment(position)) setTimeout(() => {message(checkingWinner()[1])}, 20);
+    if (playerMoviment(position)) setTimeout(() => {message(checkingWinnerOrTie()[1])}, 20);
 
     updateSpace(position, space);
 
-    if (selectOpponent == "1") setTimeout(() => {if (robotMoviment()) {setTimeout(() => {message(checkingWinner()[1])}, 520)}}, 700);
+    if (selectOpponent == "1") setTimeout(() => {if (robotMoviment()) {setTimeout(() => {message(checkingWinnerOrTie()[1])}, 520)}}, 700);
 
 }
 
@@ -27,37 +27,44 @@ function orangeCrayon() {
     c.addEventListener("mouseover", function(event) {event.target.style.cursor = "url(assets/b-orange-crayon.png), pointer"});
 }
 
-function message(symbolWinner) {
+function message(res) {
+
+    console.log(`de dentro da message func ${res}`)
 
     let audioHum = new Audio('assets/huhum.mp3');
     let audioApplause = new Audio('assets/applause.mp3');
     let whoo = new Audio('assets/whoo.mp3');
     let humanSymbol;
-
+    let robotSymbol;
     selectSymbol == 0 ? humanSymbol = 'o' : humanSymbol = 'x';
+    selectSymbol == 0 ? robotSymbol = 'x' : robotSymbol = 'o';
 
-    if (selectOpponent == "0" && symbolWinner == "x") {
+    if (selectOpponent == "0" && res == "x") {
         document.querySelector('#win-who').classList.add('xWin');
         modalOn();
         whoo.play();
     }
 
-    if (selectOpponent == "0" && symbolWinner =="o") {
+    if (selectOpponent == "0" && res == "o") {
         document.querySelector('#win-who').classList.add('oWin');
         modalOn();
         whoo.play();
     }
 
-    if (selectOpponent == "1" && symbolWinner == humanSymbol) {
+    if (selectOpponent == "1" && res == humanSymbol) {
         document.querySelector('#win-who').classList.add('hWin');
         modalOn();
         audioHum.play();
     }
     
-    if (selectOpponent == "1" && symbolWinner != humanSymbol) {
+    if (selectOpponent == "1" && res == robotSymbol) {
         audioApplause.play();
         document.querySelector('#win-who').classList.add('rWin');
         modalOn();
+    }
+
+    if (res == "tie") {
+        alert("It is a tie")
     }
 }
 
@@ -78,6 +85,7 @@ function playAgain() {
     board = ["", "", "", "", "", "", "", "", ""];
     playerTurn = 0;
     gameOver = false;
+    result = ""
     let symbol = " ";
 
     spaces.forEach((space)=>{
