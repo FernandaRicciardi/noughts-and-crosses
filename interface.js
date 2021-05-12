@@ -73,6 +73,11 @@ function modalOn() {
     document.querySelector('#win-run').classList.add('run');
 }
 
+function modalOnTie() {
+    document.querySelector('.modal-overlay').classList.add('active');
+    document.querySelector('#win-run').classList.add('run');
+}
+
 function playAgain() {
     
     document.querySelector('.modal-overlay').classList.remove('active');

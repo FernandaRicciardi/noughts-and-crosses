@@ -280,6 +280,12 @@ h1 {
     background-position: center;
 }
 
+.tie {
+    background-image: url(assets/tie.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 /***** RESET BUTTON (ERASER) *****/
 #reset {
     width: 50px;
