@@ -113,3 +113,9 @@ function playAgain() {
 function reloadGame() {
     location.reload();
 }
+
+function changeBG() {
+    let bg = window.getComputedStyle(document.body,null).getPropertyValue('background-color');
+    
+    bg == "rgb(19, 21, 21)" ? document.body.style.backgroundColor = "rgb(56, 36, 55)" : document.body.style.backgroundColor = "rgb(19, 21, 21)";
+}
