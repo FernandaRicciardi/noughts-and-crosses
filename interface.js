@@ -89,6 +89,10 @@ function playAgain() {
     document.querySelector('#win-who').classList.remove('oWin');
     document.querySelector('#win-who').classList.remove('hWin');
     document.querySelector('#win-who').classList.remove('rWin');
+    document.getElementById("win-who").style.width = "280px";
+    document.getElementById("win-who").style.height = "280px";
+    document.querySelector('#win-who').classList.remove('tie');
+    document.getElementById("win-run").src = "assets/run.png";
    
     board = ["", "", "", "", "", "", "", "", ""];
     playerTurn = 0;
