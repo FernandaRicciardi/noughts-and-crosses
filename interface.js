@@ -64,7 +64,7 @@ function message(res) {
     }
 
     if (res == "tie") {
-        alert("It is a tie")
+        modalOnTie();
     }
 }
 
@@ -74,8 +74,11 @@ function modalOn() {
 }
 
 function modalOnTie() {
+    document.getElementById("win-who").style.width = "350px";
+    document.getElementById("win-who").style.height = "350px";
+    document.querySelector('#win-who').classList.add('tie');
+    document.getElementById("win-run").src = "";
     document.querySelector('.modal-overlay').classList.add('active');
-    document.querySelector('#win-run').classList.add('run');
 }
 
 function playAgain() {
