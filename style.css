@@ -9,7 +9,6 @@ body {
 #container {
     display: grid;
     grid-template-columns: 1fr 500px 1fr;
-    position: relative;
 }
 
 h1, h2 {
