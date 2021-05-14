@@ -1,12 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(19, 21, 21);
+    background-color: #131515;
     text-align: center;
- 
 }
 
 #container {
+    min-width: 1340px;
     display: grid;
     grid-template-columns: 1fr 500px 1fr;
 }
@@ -26,7 +26,8 @@ h1 {
 
 /***** SETTINGS *****/
 .opponent-selector,
-.symbol-selector {
+.symbol-selector,
+#score {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -34,7 +35,7 @@ h1 {
     margin: 70px;
 }
 
-.item1 {
+.subHeaders {
     width: 100%;
     margin-bottom: 30px;
     border-radius: 10px;
@@ -199,12 +200,6 @@ h1 {
     overflow: hidden;
 }
 
-/***** MODAL ACTIVE *****/
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 #win-paper {
     position: absolute;
     width: 350px;
@@ -337,5 +332,43 @@ h1 {
 
 .chame:hover {
     width: 90px;
+}
+
+/***** SCORE *****/
+.score_hum-hum {
+    opacity: 0;
+    visibility: hidden;
+    margin: 0 70px;    
+}
+
+.score_hum-rob {
+    position: relative;
+    top: -260px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.score_hum-hum img {
+    width: 55px;
+}
+
+.score_hum-rob img {
+    width: 70px;
+}
+
+.score_num {
+    position: relative;
+    bottom: 15px;
+    font-family: 'Rock Salt', cursive;
+    display: inline-block;
+    font-size: 30px;
+    color: #f3efe0;
+    padding-left: 35px;
+}
+
+/***** CLASS ACTIVE *****/
+.active {
+    opacity: 1;
+    visibility: visible;
 }
 

@@ -19,7 +19,7 @@
 
             <div class="opponent-selector"> <!-- Human or Robot -->
 
-                <h2 class="item1" >Select opponent</h2>
+                <h2 class="subHeaders" >Select opponent</h2>
 
                 <div> <!-- Human -->
                     <input id="sel-h" type="radio" name="selectOpponent" value="0">
@@ -35,7 +35,7 @@
             
             <div class="symbol-selector"> <!-- Nought or Cross -->
 
-                <h2 class="item1">Select symbol</h2>
+                <h2 class="subHeaders">Select symbol</h2>
 
                 <div> <!-- Nought -->
                     <input id="sel-o" type="radio" name="selectSymbol" value="0" onclick="blueCrayon()">
@@ -93,7 +93,39 @@
             </div>
         </div>
 
-        <!-- SCORE HERE-->
+        <div id="score"> <!-- score -->
+
+            <h2 class="subHeaders" >Score</h2>
+
+            <div class="score_hum-hum"> <!-- Human vs Human -->
+
+                <div>
+                    <img src="assets/o.png">
+                    <p id="scoreO" class="score_num">0</p>
+                </div>
+
+                <div>
+                    <img src="assets/x.png">
+                    <p id="scoreX" class="score_num">0</p>
+                </div>
+
+            </div>
+
+            <div class="score_hum-rob"> <!-- Human vs Robot -->
+                
+                <div>
+                    <img src="assets/human2.png">
+                    <p id="scoreH" class="score_num">0</p>
+                </div>
+
+                <div>
+                    <img src="assets/robot2.png">
+                    <p id="scoreR" class="score_num">0</p>
+                </div>
+
+            </div>
+
+        </div>
 
         <div id="chameleon"> <!-- Change background-color -->
             <img class="chame" src="assets/chameleon.png" onclick="changeBG()">
@@ -101,7 +133,7 @@
 
     </div>
 
-    <footer id="credits">
+    <footer id="credits"> <!-- footer -->
         Created by <a href="https://github.com/FernandaRicciardi" target="_blank" rel="noopener">Fernanda Ricciardi</a>
     </footer>
 

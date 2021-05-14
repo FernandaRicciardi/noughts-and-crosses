@@ -1,9 +1,24 @@
 spaces.forEach((space) => space.addEventListener("click", handleClick));
 
+document.getElementById("sel-h").addEventListener("click", activeScoreHH);
+document.getElementById("sel-r").addEventListener("click", activeScoreHR);
+
+function activeScoreHH() {
+    document.querySelector(".score_hum-rob").classList.remove('active');
+    document.querySelector(".score_hum-hum").classList.add('active');
+}
+
+function activeScoreHR() {
+    document.querySelector(".score_hum-hum").classList.remove('active');
+    document.querySelector(".score_hum-rob").classList.add('active');
+}
+
 function handleClick(event) {
     
     let space = event.target;
     let position = space.id;
+
+    if (board[position] != "") return;
     
     if (playerMoviment(position)) setTimeout(() => {message(checkingWinnerOrTie()[1])}, 20);
 
@@ -43,24 +58,28 @@ function message(res) {
         document.querySelector('#win-who').classList.add('xWin');
         modalOn();
         whoo.play();
+        upScore("scoreX")
     }
 
     if (selectOpponent == "0" && res == "o") {
         document.querySelector('#win-who').classList.add('oWin');
         modalOn();
         whoo.play();
+        upScore("scoreO")
     }
 
     if (selectOpponent == "1" && res == humanSymbol) {
         document.querySelector('#win-who').classList.add('hWin');
         modalOn();
         audioHum.play();
+        upScore("scoreH")
     }
     
     if (selectOpponent == "1" && res == robotSymbol) {
         audioApplause.play();
         document.querySelector('#win-who').classList.add('rWin');
         modalOn();
+        upScore("scoreR")
     }
 
     if (res == "tie") {
@@ -81,37 +100,10 @@ function modalOnTie() {
     document.querySelector('.modal-overlay').classList.add('active');
 }
 
-function playAgain() {
-    
-    document.querySelector('.modal-overlay').classList.remove('active');
-    document.querySelector('#win-run').classList.remove('run');
-    document.querySelector('#win-who').classList.remove('xWin');
-    document.querySelector('#win-who').classList.remove('oWin');
-    document.querySelector('#win-who').classList.remove('hWin');
-    document.querySelector('#win-who').classList.remove('rWin');
-    document.getElementById("win-who").style.width = "280px";
-    document.getElementById("win-who").style.height = "280px";
-    document.querySelector('#win-who').classList.remove('tie');
-    document.getElementById("win-run").src = "assets/run.png";
-   
-    board = ["", "", "", "", "", "", "", "", ""];
-    playerTurn = 0;
-    gameOver = false;
-    result = ""
-    let symbol = " ";
-
-    spaces.forEach((space)=>{
-        space.innerHTML = `<div class='${symbol}'></div>`
-    });
-
-    spaces.forEach((space) => space.addEventListener("click", handleClick));
-
-    if (selectOpponent == "0" && selectSymbol == 0) blueCrayon();
-    if (selectOpponent == "0" && selectSymbol == 1) orangeCrayon();
-}
-
-function reloadGame() {
-    location.reload();
+function upScore(sc) {
+    let player = document.getElementById(sc);
+    let score = parseInt(player.innerHTML) + 1;
+    player.innerHTML = score;
 }
 
 function changeBG() {
