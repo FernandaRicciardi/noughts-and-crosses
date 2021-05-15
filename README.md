@@ -24,9 +24,10 @@
  
  :small_orange_diamond::small_orange_diamond::small_orange_diamond::small_orange_diamond:
  
- Enjoy!! :joystick:
+ Enjoy!! :joystick: [Play here!](https://fernandaricciardi.github.io/noughts-and-crosses/)
  
  Cheers! :tipping_hand_person:
  
+
  
  ![](https://github.com/FernandaRicciardi/noughts-and-crosses/blob/main/assets/Screenshot.jpg)
