@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
     <title>Noughts & Crosses</title>
 </head>
 <body>
@@ -95,7 +99,7 @@
 
         <div id="score"> <!-- score -->
 
-            <h2 class="subHeaders" >Score</h2>
+            <h2 class="subHeaders">Score</h2>
 
             <div class="score_hum-hum"> <!-- Human vs Human -->
 
@@ -124,11 +128,6 @@
                 </div>
 
             </div>
-
-        </div>
-
-        <div id="chameleon"> <!-- Change background-color -->
-            <img class="chame" src="assets/chameleon.png" onclick="changeBG()">
         </div>
 
     </div>
@@ -137,8 +136,11 @@
         Created by <a href="https://github.com/FernandaRicciardi" target="_blank" rel="noopener">Fernanda Ricciardi</a>
     </footer>
 
+    <div id="chameleon"> <!-- change background-color -->
+        <img class="chame" src="assets/chameleon.png" onclick="changeBG()">
+    </div>
+
     <script src="game.js"></script>
     <script src="interface.js"></script>
-    
 </body>
 </html>

@@ -73,7 +73,7 @@ function robotMoviment() {
 
 function checkingWinnerOrTie() {
 
-    let hasEmpty = board.some((currentSpace) => currentSpace == "") // if there is at least 1 empty space: 'let hasEmpty = true' / if not: 'let hasEmpty = false'
+    let hasEmpty = board.some((currentSpace) => currentSpace == "")
    
     for (let i = 0; i < winStates.length; i++) {
 
@@ -86,7 +86,8 @@ function checkingWinnerOrTie() {
         if (board[place0] == board[place1] && 
             board[place0] == board[place2] &&
             board[place0] != "") {
-
+            
+            spin(place0, place1, place2)
             result = board[place0];
             return [true, result];
         }
@@ -99,6 +100,18 @@ function checkingWinnerOrTie() {
     }
 
     return false;
+}
+
+function spin(p0, p1, p2) {
+    document.getElementById(p0).classList.add('spin-animation');
+    document.getElementById(p1).classList.add('spin-animation');
+    document.getElementById(p2).classList.add('spin-animation');
+
+    setTimeout(function(){
+        document.getElementById(p0).classList.remove('spin-animation')
+        document.getElementById(p1).classList.remove('spin-animation')
+        document.getElementById(p2).classList.remove('spin-animation')
+    }, 2000);
 }
 
 function playAgain() {
@@ -120,9 +133,7 @@ function playAgain() {
     result = ""
     let symbol = " ";
 
-    spaces.forEach((space)=>{
-        space.innerHTML = `<div class='${symbol}'></div>`
-    });
+    spaces.forEach((space) => space.innerHTML = `<div class='${symbol}'></div>`);
 
     spaces.forEach((space) => space.addEventListener("click", handleClick));
 

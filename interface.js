@@ -20,11 +20,11 @@ function handleClick(event) {
 
     if (board[position] != "") return;
     
-    if (playerMoviment(position)) setTimeout(() => {message(checkingWinnerOrTie()[1])}, 20);
+    if (playerMoviment(position)) setTimeout(() => {message(checkingWinnerOrTie()[1])}, 220);
 
     updateSpace(position, space);
 
-    if (selectOpponent == "1") setTimeout(() => {if (robotMoviment()) {setTimeout(() => {message(checkingWinnerOrTie()[1])}, 520)}}, 700);
+    if (selectOpponent == "1") setTimeout(() => {if (robotMoviment()) {setTimeout(() => {message(checkingWinnerOrTie()[1])}, 600)}}, 700);
 
 }
 
@@ -46,9 +46,10 @@ function message(res) {
 
     console.log(`de dentro da message func ${res}`)
 
-    let audioHum = new Audio('assets/huhum.mp3');
-    let audioApplause = new Audio('assets/applause.mp3');
-    let whoo = new Audio('assets/whoo.mp3');
+    let audioHum = new Audio('assets/audios/huhum.mp3');
+    let audioApplause = new Audio('assets/audios/applause.mp3');
+    let whoo = new Audio('assets/audios/whoo.mp3');
+    let cat = new Audio('assets/audios/cat.mp3');
     let humanSymbol;
     let robotSymbol;
     selectSymbol == 0 ? humanSymbol = 'o' : humanSymbol = 'x';
@@ -84,6 +85,7 @@ function message(res) {
 
     if (res == "tie") {
         modalOnTie();
+        cat.play();
     }
 }
 

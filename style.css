@@ -26,8 +26,7 @@ h1 {
 
 /***** SETTINGS *****/
 .opponent-selector,
-.symbol-selector,
-#score {
+.symbol-selector {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,10 +36,12 @@ h1 {
 
 .subHeaders {
     width: 100%;
+    height: fit-content;
     margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: -2px 2px 2px rgb(233, 229, 210);
     color: #dfb449;
+  
 }
 
 /***** OPPONENT / SYMBOL SELECTORS *****/
@@ -175,6 +176,16 @@ h1 {
      right: 30px;
 }
 
+/***** SPIN ANIMATION *****/ 
+.spin-animation {
+    animation: spin 700ms linear 2; 
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
 /***** MODAL *****/
 .modal-overlay {
     background-color: rgba(0, 0, 0, 0.7);
@@ -254,7 +265,6 @@ h1 {
 }
 
 /***** WINNERS *****/
-
 .hWin {
     background-image: url(assets/mrBean.gif);
     background-size: cover;
@@ -282,6 +292,49 @@ h1 {
     background-size: cover;
 }
 
+/***** SCORE *****/
+#score {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 70px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.score_hum-hum {
+    margin-top: -25px;
+    opacity: 0;
+    visibility: hidden;    
+}
+
+.score_hum-rob {
+    position: absolute;
+    bottom: 65px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.score_hum-hum img {
+    width: 55px;
+}
+
+.score_hum-rob img {
+    width: 70px;
+}
+
+.score_num {
+    position: relative;
+    bottom: 15px;
+    font-family: 'Rock Salt', cursive;
+    display: inline-block;
+    font-size: 30px;
+    color: #f3efe0;
+    padding-left: 35px;
+}
+
 /***** RESET BUTTON (ERASER) *****/
 #reset {
     width: 50px;
@@ -305,16 +358,26 @@ h1 {
 
 /***** FOOTER *****/
 #credits {
+    position: relative;
     font-family: serif;
     color: rgb(150, 144, 144);
     padding: 7px;
     letter-spacing: 0.1em;
-    font-size: 0.8em;
+    font-size: 0.9em;
     text-align: center;
+    margin-top: 20px;
   }
   
 #credits a {
+    text-decoration: none;
     color: rgb(235, 152, 152);
+    display: inline-block;
+}
+
+#credits a:hover {
+    color: #f7c78d;
+    transform: translate3d(0, -2px, 0);
+    text-shadow: 0.7px 0.7px 1.5px #f7c78d;
 }
 
 /***** CHAMELEON *****/
@@ -332,38 +395,6 @@ h1 {
 
 .chame:hover {
     width: 90px;
-}
-
-/***** SCORE *****/
-.score_hum-hum {
-    opacity: 0;
-    visibility: hidden;
-    margin: 0 70px;    
-}
-
-.score_hum-rob {
-    position: relative;
-    top: -260px;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.score_hum-hum img {
-    width: 55px;
-}
-
-.score_hum-rob img {
-    width: 70px;
-}
-
-.score_num {
-    position: relative;
-    bottom: 15px;
-    font-family: 'Rock Salt', cursive;
-    display: inline-block;
-    font-size: 30px;
-    color: #f3efe0;
-    padding-left: 35px;
 }
 
 /***** CLASS ACTIVE *****/
