@@ -143,5 +143,7 @@ function playAgain() {
 }
 
 function reloadGame() {
-    window.location.href = "product.aspx?id=prod" + "&" + Date.parse(new Date());
+    window.location = window.location;
+    /* window.location.href = "product.aspx?id=prod" + "&" + Date.parse(new Date()); ---> 2nd option */
+    /* location.reload(); ---> It does not work in Firefox */
 }
