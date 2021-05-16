@@ -143,5 +143,5 @@ function playAgain() {
 }
 
 function reloadGame() {
-    window.location = window.location;
+    window.location.href = "product.aspx?id=prod" + "&" + Date.parse(new Date());
 }

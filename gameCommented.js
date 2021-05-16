@@ -155,5 +155,5 @@ function playAgain() {
 
 // When ERASE button is pressed:
 function reloadGame() {
-    location.reload();
+    window.location.href = "product.aspx?id=prod" + "&" + Date.parse(new Date());
 }
