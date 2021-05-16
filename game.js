@@ -143,5 +143,5 @@ function playAgain() {
 }
 
 function reloadGame() {
-    window.location.href = "index.html" + "?" + Date.parse(new Date());
+    window.location = window.location;
 }
