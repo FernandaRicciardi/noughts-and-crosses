@@ -23,7 +23,8 @@
  :pouting_man: vs :robot:
  
  
- 
+ noughts-and-crosses
+
  :sweat_smile::sweat_smile::sweat_smile::sweat_smile: I've drawn the board, the symbols X/O and the PLAY button with Microsoft Paint :sweat_smile::sweat_smile::sweat_smile::sweat_smile:
  
  :small_orange_diamond::small_orange_diamond::small_orange_diamond::small_orange_diamond:
