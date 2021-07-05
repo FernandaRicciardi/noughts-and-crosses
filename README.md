@@ -6,7 +6,7 @@
  
  :cool: The cool feature:
  
- *the crayon changes color!!* :large_blue_circle::orange_circle:
+ *the crayon changes colour!!* :large_blue_circle::orange_circle:
  
  :open_mouth: 	:clap: 	:blush:
  
