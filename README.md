@@ -1,6 +1,6 @@
 # Noughts and Crosses :crayon:
  
- My first game built from scratch. 	:woman_mechanic:
+ This is my first game project built from scratch by manipulating the DOM. :woman_mechanic:
  
  ============================
  
